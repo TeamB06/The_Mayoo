@@ -696,13 +696,10 @@ a:focus {
 }
 
 /* Tim Dev Mayoo Start */
-.client_section .heading_container {
-  margin-bottom: 30px;
-}
-
 .client_section .box {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Memastikan teks dan gambar sejajar di tengah */
   margin: 15px;
 }
 
@@ -711,15 +708,18 @@ a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 115px;
+  width: 115px; /* Ukuran lingkaran gambar */
+  height: 115px;
   margin-top: 30px;
 }
 
 .client_section .box .img-box img {
-  border-radius: 100%;
+  width: 100%; /* Gambar menyesuaikan dengan lingkaran */
+  height: 100%; /* Tinggi mengikuti lebar lingkaran */
+  border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
+  object-fit: cover; /* Menghindari distorsi gambar */
   border: 5px solid #ffbe33;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
-  position: relative;
   transition: transform 0.3s ease; /* Efek transisi */
 }
 
@@ -727,18 +727,8 @@ a:focus {
   transform: scale(1.1); /* Zoom-in saat hover */
 }
 
-.client_section .box .img-box::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  background-color: #ffbe33;
-  transform: rotate(45deg) translateX(-50%);
-}
-
 .client_section .box .detail-box {
+  text-align: center; /* Teks rata tengah */
   background-color: #222831;
   color: #ffffff;
   padding: 25px 25px 15px 25px;
@@ -764,37 +754,6 @@ a:focus {
   line-height: 1.5; /* Jarak antar baris */
 }
 
-.client_section .owl-carousel .owl-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 45px;
-  padding: 0 15px;
-}
-
-.client_section .owl-carousel .owl-nav .owl-prev,
-.client_section .owl-carousel .owl-nav .owl-next {
-  width: 45px;
-  height: 45px;
-  background-color: #ffbe33;
-  color: #ffffff;
-  font-size: 24px;
-  margin: 0 5px;
-  border-radius: 100%;
-  transition: all 0.3s ease; /* Efek transisi */
-}
-
-.client_section .owl-carousel .owl-nav .owl-prev:hover,
-.client_section .owl-carousel .owl-nav .owl-next:hover {
-  background-color: #222831; /* Ganti warna saat hover */
-  color: #ffbe33;
-}
-
-.client_section .owl-carousel .owl-nav .owl-prev:focus,
-.client_section .owl-carousel .owl-nav .owl-next:focus {
-  outline: 2px solid #ffbe33; /* Aksesibilitas keyboard */
-  outline-offset: 4px;
-}
-
 /* Responsiveness */
 @media (max-width: 768px) {
   .client_section .box {
@@ -803,12 +762,13 @@ a:focus {
 
   .client_section .box .img-box {
     width: 90px; /* Sesuaikan ukuran gambar */
+    height: 90px; /* Tinggi sesuai dengan lebar */
     margin-top: 20px;
   }
 
   .client_section .box .img-box img {
-    width: 90px;
-    height: 90px;
+    width: 100%; /* Gambar tetap proporsional */
+    height: 100%;
   }
 
   .client_section .box .detail-box {
@@ -816,6 +776,7 @@ a:focus {
   }
 }
 /* Tim Dev Mayoo End */
+
 
 .contact_section .heading_container {
   margin-bottom: 45px;
@@ -886,6 +847,7 @@ a:focus {
 }
 
 /* footer section*/
+
 .footer_section {
   background-color: #222831;
   color: #ffffff;
